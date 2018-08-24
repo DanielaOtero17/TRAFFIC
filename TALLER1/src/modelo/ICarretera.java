@@ -1,5 +1,5 @@
 package modelo;
 
-public class ICarretera {
+public interface ICarretera {
 
 }
