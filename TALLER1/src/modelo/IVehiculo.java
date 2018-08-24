@@ -1,5 +1,5 @@
 package modelo;
 
-public class IVehiculo {
+public interface IVehiculo {
 
 }
