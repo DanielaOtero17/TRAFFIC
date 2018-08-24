@@ -28,7 +28,7 @@ class CarreteraTest {
 
 	@Test
 	void testAgregarAutomovil() {
-		fail("Not yet implemented");
+		
 	}
 
 	@Test
