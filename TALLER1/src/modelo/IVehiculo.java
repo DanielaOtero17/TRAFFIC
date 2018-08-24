@@ -1,5 +1,9 @@
 package modelo;
 
-public class IVehiculo {
+public interface IVehiculo {
+	
+	public String darPlaca();
+	public double darVelocidad();
+	public int darPosicion();
 
 }
