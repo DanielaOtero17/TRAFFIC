@@ -1,5 +1,10 @@
 package modelo;
 
-public class Carro {
-
+public class Carro implements IVehiculo{
+	
+	 public Carro() {
+		 super();
+		 
+	 }
+	 
 }
