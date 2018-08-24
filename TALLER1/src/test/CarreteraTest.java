@@ -33,23 +33,24 @@ class CarreteraTest {
 
 	@Test
 	void testAMoverVehiculo() {
-		fail("Not yet implemented");
+	
 	}
 
 	@Test
 	void testContarVehiculosEnMovimiento() {
-		fail("Not yet implemented");
+	
 	}
 
 	@Test
 	void testContarAutosTranscurridos() {
-		fail("Not yet implemented");
+		
 	}
 
 	@Test
 	void testAgrContarMovimiento() {
-		fail("Not yet implemented");
+		
 	}
+	
 	
 	
 
