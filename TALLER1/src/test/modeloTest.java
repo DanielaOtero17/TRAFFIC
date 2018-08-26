@@ -1,13 +1,20 @@
 package test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import modelo.Carretera;
+import modelo.Carro;
+import static org.junit.Assert.*;
+import org.junit.Test;
 
-import org.junit.jupiter.api.Test;
+public class modeloTest {
 
-class CarreteraTest {
+	private Carretera carretera;
+	private Carro carrito;
 
 	public void setupStage1() {
 		
+		carretera = new Carretera();
+		carrito = new Carro("123",100);
+		carretera.agregarAutomovil(carrito);
 	}
 	
 
@@ -28,6 +35,11 @@ class CarreteraTest {
 
 	@Test
 	void testAgregarAutomovil() {
+		
+		setupStage1();
+		Carro x = new Carro("456",200);
+		carretera.agregarAutomovil(x);
+		assertEquals(x.darPosicion(),1);
 		
 	}
 
@@ -50,8 +62,5 @@ class CarreteraTest {
 	void testAgrContarMovimiento() {
 		
 	}
-	
-	
-	
-
 }
+

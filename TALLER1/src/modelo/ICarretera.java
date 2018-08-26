@@ -3,7 +3,7 @@ package modelo;
 public interface ICarretera {
 	
 	
-	public boolean agregarAutomovil (IVehiculo vehi);
+	public boolean agregarAutomovil(Carro vehi);
 	
 	public boolean moverVehiculo();
 	
