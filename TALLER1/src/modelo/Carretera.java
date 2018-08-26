@@ -10,7 +10,7 @@ public class Carretera implements ICarretera{
 	public Carro agregarAutomovil(String placa, double velocidad) {
 		
 		
-		
+		Carro nuevo = new Carro(placa,velocidad);
 		
 	}
 	
