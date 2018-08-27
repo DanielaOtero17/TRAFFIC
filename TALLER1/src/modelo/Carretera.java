@@ -83,8 +83,10 @@ public class Carretera implements ICarretera{
 		Carro aux = carro;
 		int cont = 0;
 		while(aux != null) {
-			if(aux.darPosicion() < END_WAY)
-				cont++;
+			if(aux.darPosicion() < END_WAY){
+				cont++;}
+			carro= carro.darSiguiente();
+			aux = carro;
 		}
 		return cont;
 	}
@@ -95,7 +97,9 @@ public class Carretera implements ICarretera{
 		int cont = 0;
 		while(aux != null) {
 			if(aux.darPosicion() > END_WAY)
-				cont++;
+				{cont++;}
+			carro= carro.darSiguiente();
+			aux = carro;
 		}
 		return cont;
 	}
