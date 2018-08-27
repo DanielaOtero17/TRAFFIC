@@ -11,7 +11,7 @@ public interface ICarretera {
 	
 	public int contarAutosTranscurridos();
 	
-	public int contarMovimientos();
+	public int contarMovimientos(Carro car);
 	
 
 }

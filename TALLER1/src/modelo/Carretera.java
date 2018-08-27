@@ -101,8 +101,9 @@ public class Carretera implements ICarretera{
 	}
 
 	@Override
-	public int contarMovimientos() {
+	public int contarMovimientos(Carro car) {
 		
+		int movimientos = ((int)(END_WAY/car.darVelocidad()));
 		return movimientos;
 	}
 
