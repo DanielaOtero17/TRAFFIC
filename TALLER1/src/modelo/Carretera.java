@@ -19,7 +19,7 @@ public class Carretera implements ICarretera{
 			//se crea como nuevo carro.
 		carro = new Carro(placa,velocidad);
 		// se le da una posición.
-		carro.setPosicion(0);
+		carro.cambiarPosicion(0);
 		// retorna el primer elemento.
 		return carro;
 		}
@@ -39,12 +39,13 @@ public class Carretera implements ICarretera{
 			}
 		//cuando auxiliar es nula
 			// se crea como nuevo carro.
-			aux = new Carro(placa,velocidad);
+			carro= new Carro(placa,velocidad);
+			//auxiliar se ubica de último.
 			//se asigna la posición al nuevo carro.
-			aux.setPosicion(posicion);
+			carro.cambiarPosicion(posicion);
 		}
 		//se retorna el nuevo elemento: auxiliar.
-		return aux;
+		return carro;
 	}
 
 	@Override
@@ -53,28 +54,27 @@ public class Carretera implements ICarretera{
 		boolean agrega = true; // variable para validar.
 		Carro aux = carro; // variable auxiliar.
 		
-		// mientras que existe sea verdadero y el auxiliar no sea nulo.
-		while(agrega = true && aux != null){
-			
-			// auxiliar es igual a carro.
-			aux = carro;
+		// mientras que auxiliar no sea nulo.
+		while(agrega&&aux!=null){
 			
 			// si la placa del auxiliar es igual a la del carro ingresado
-				if(aux.darPlaca()== vehi.darPlaca()){
+				if(vehi.darPlaca().equals(aux.darPlaca())){
 					
-					//existe es falso.
+					//agrega es falso.
 					agrega=false;
-					// detiene el ciclo.
-					break;
-			}
-			//  carro es igual al siguiente.
-			carro= carro.darSiguiente();
+																
+				}
+				carro= carro.darSiguiente();
+				aux = carro;			
 		}
-		
 		// retorna agrega.
 		return agrega;
 	}
 
+	public Carro darPrimero(){
+		
+		return carro;
+	}
 	@Override
 	public boolean moverVehiculo() {
 		// TODO Auto-generated method stub

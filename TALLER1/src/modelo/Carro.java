@@ -32,14 +32,29 @@ public class Carro implements IVehiculo{
 		return posicion;
 	}
 	
-	public int setPosicion(int pos){
+	@Override
+	public void cambiarPosicion(int pos){
 		
 		posicion = pos;
-		return posicion;
 	}
 	public Carro darSiguiente(){
 		
 		return siguiente;
 	}
-	 
+
+	@Override
+	public void cambiarPlaca(String p) {
+	
+		placa = p;
+		
+	}
+
+	@Override
+	public void cambiarVelocidad(double v) {
+		
+		velocidad = v;
+		
+	}
+
+	
 }
