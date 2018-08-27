@@ -13,14 +13,14 @@ public class modeloTest {
 	public void setupStage1() {
 		
 		carretera = new Carretera();
-		carretera.agregarAutomovil("123",100);
+		carretera.agregarAutomovil("123",100,11);
 	}
 	
 
 	public void setupStage2() {
 		
 		carretera= new Carretera();
-		carretera.moverVehiculo();
+		carrito = new Carro("123",300.5,8);
 		
 	}
 
@@ -47,8 +47,8 @@ public class modeloTest {
 	public void setupStage6(){
 		
 		carretera = new Carretera();
-		carretera.agregarAutomovil("123", 100);
-		 carretera.agregarAutomovil("000", 10);
+		carretera.agregarAutomovil("123", 100,20);
+		 carretera.agregarAutomovil("000", 10,13);
 	}
 
 
@@ -56,8 +56,8 @@ public class modeloTest {
 	public void testAgregarAutomovil() {
 		
 		setupStage1();
-		Carro x = new Carro("4567",200);
-		boolean result = carretera.agregarAutomovil(x);
+		carrito = new Carro("4567",200,5);
+		boolean result = carretera.agregarAutomovil(carrito);
 		assertTrue(result);
 		
 	}
@@ -66,17 +66,13 @@ public class modeloTest {
 		
 		setupStage6();
 		
-		Carro otro = carretera.agregarAutomovil("300", 11);
+		Carro otro = carretera.agregarAutomovil("300", 11,7);
 		int pos= otro.darPosicion();
 		assertEquals(pos,2);
 		
 	}
 
-	@Test
-	public void testAMoverVehiculo() {
-	setupStage2();
 	
-	}
 
 	@Test
 	public void testContarVehiculosEnMovimiento() {

@@ -9,7 +9,7 @@ public class Carretera implements ICarretera{
 		carro = null;		
 	}
 	
-	public Carro agregarAutomovil(String placa, double velocidad) {
+	public Carro agregarAutomovil(String placa, double velocidad,int posicion) {
 		
 		Carro aux = carro; // variable auxiliar.
 		
@@ -17,34 +17,25 @@ public class Carretera implements ICarretera{
 		if(carro== null){
 			
 			//se crea como nuevo carro.
-		carro = new Carro(placa,velocidad);
-		// se le da una posición.
-		carro.cambiarPosicion(0);
+		carro = new Carro(placa,velocidad,posicion);
+		
 		// retorna el primer elemento.
 		return carro;
 		}
 		else{
 			
-			int posicion = 0;
-			
-			//mientras que auxiliar no sea nula.
+			//mientras que auxiliar no sea nulo.
 			while(aux!=null){
-				
 			//auxiliar es igual al siguiente elemento.
 			aux = carro.darSiguiente();
-			// se cuenta la posición de axiliar.
-			posicion= carro.darPosicion()+1;
 			// carro es igual al siguiente elemento
 			carro = carro.darSiguiente();
 			}
-		//cuando auxiliar es nula
+		//cuando carro es nulo
 			// se crea como nuevo carro.
-			carro= new Carro(placa,velocidad);
-			//auxiliar se ubica de último.
-			//se asigna la posición al nuevo carro.
-			carro.cambiarPosicion(posicion);
+			carro= new Carro(placa,velocidad,posicion);
 		}
-		//se retorna el nuevo elemento: auxiliar.
+		//se retorna el nuevo carro.
 		return carro;
 	}
 
@@ -76,9 +67,13 @@ public class Carretera implements ICarretera{
 		return carro;
 	}
 	@Override
-	public boolean moverVehiculo() {
-		// TODO Auto-generated method stub
-		return false;
+	public void moverVehiculo(Carro vehi, int pos) {
+		
+		int posIni= vehi.darPosicion();
+		
+		vehi.cambiarPosicion(pos);
+		
+	
 	}
 
 	@Override

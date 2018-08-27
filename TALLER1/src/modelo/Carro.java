@@ -7,11 +7,11 @@ public class Carro implements IVehiculo{
 	private int posicion;
 	private Carro siguiente;
 	
-	 public Carro(String id, double vel) {
+	 public Carro(String id, double vel, int pos) {
 		 
 		 this.placa = id;
 		 this.velocidad=vel;	
-		 posicion = 0;
+		 posicion = pos;
 		 siguiente = null;
 	 }
 	 
