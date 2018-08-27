@@ -72,8 +72,6 @@ public class modeloTest {
 		
 	}
 
-	
-
 	@Test
 	public void testContarVehiculosEnMovimiento() {
 		setupStage3();
