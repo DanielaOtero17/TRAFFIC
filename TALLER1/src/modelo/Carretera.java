@@ -89,6 +89,7 @@ public class Carretera implements ICarretera{
 			aux = carro;
 		}
 		return cont;
+		
 	}
 
 	@Override
