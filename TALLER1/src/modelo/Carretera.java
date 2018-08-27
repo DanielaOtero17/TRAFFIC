@@ -5,10 +5,12 @@ public class Carretera implements ICarretera{
 	public final int END_WAY = 200;
 	
 	private Carro carro;
+	private int movimientos;
 	
 	public Carretera() {
 		
 		carro = null;		
+		movimientos = 0;
 	}
 	
 	public Carro agregarAutomovil(String placa, double velocidad,int posicion) {
@@ -70,8 +72,10 @@ public class Carretera implements ICarretera{
 	}
 	@Override
 	public void moverVehiculo(Carro vehi) {
-		
-		vehi.cambiarPosicion((int)(vehi.darPosicion()+vehi.darVelocidad()));
+		if(vehi != null) {
+			vehi.cambiarPosicion((int)(vehi.darPosicion()+vehi.darVelocidad()));
+			movimientos += (int)vehi.darVelocidad();
+		}
 	}
 
 	@Override
@@ -98,8 +102,8 @@ public class Carretera implements ICarretera{
 
 	@Override
 	public int contarMovimientos() {
-		// TODO Auto-generated method stub
-		return 0;
+		
+		return movimientos;
 	}
 
 }
