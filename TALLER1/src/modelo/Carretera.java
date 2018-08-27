@@ -2,6 +2,8 @@ package modelo;
 
 public class Carretera implements ICarretera{
 	
+	public final int END_WAY = 200;
+	
 	private Carro carro;
 	
 	public Carretera() {
@@ -67,25 +69,31 @@ public class Carretera implements ICarretera{
 		return carro;
 	}
 	@Override
-	public void moverVehiculo(Carro vehi, int pos) {
+	public void moverVehiculo(Carro vehi) {
 		
-		int posIni= vehi.darPosicion();
-		
-		vehi.cambiarPosicion(pos);
-		
-	
+		vehi.cambiarPosicion((int)(vehi.darPosicion()+vehi.darVelocidad()));
 	}
 
 	@Override
 	public int contarvehiculosEnMovimientos() {
-		// TODO Auto-generated method stub
-		return 0;
+		Carro aux = carro;
+		int cont = 0;
+		while(aux != null) {
+			if(aux.darPosicion() < END_WAY)
+				cont++;
+		}
+		return cont;
 	}
 
 	@Override
 	public int contarAutosTranscurridos() {
-		// TODO Auto-generated method stub
-		return 0;
+		Carro aux = carro;
+		int cont = 0;
+		while(aux != null) {
+			if(aux.darPosicion() > END_WAY)
+				cont++;
+		}
+		return cont;
 	}
 
 	@Override
