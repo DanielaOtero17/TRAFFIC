@@ -5,7 +5,7 @@ public interface ICarretera {
 	
 	public boolean agregarAutomovil(Carro vehi);
 	
-	public void moverVehiculo(Carro vehi,int posicion);
+	public void moverVehiculo(Carro vehi);
 	
 	public int contarvehiculosEnMovimientos();
 	
