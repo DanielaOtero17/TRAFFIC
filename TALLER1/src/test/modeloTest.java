@@ -29,6 +29,7 @@ public class modeloTest {
 		
 		carretera= new Carretera();
 		carretera.contarvehiculosEnMovimientos();
+
 	}
 
 
@@ -66,28 +67,43 @@ public class modeloTest {
 		
 		setupStage6();
 		
-		Carro otro = carretera.agregarAutomovil("300", 11,7);
+		Carro otro = carretera.agregarAutomovil("300", 11,2);
 		int pos= otro.darPosicion();
 		assertEquals(pos,2);
+
 		
 	}
 
 	@Test
 	public void testContarVehiculosEnMovimiento() {
 		setupStage3();
+		Carro carro1 = carretera.agregarAutomovil("576", 56, 15);
+		int result = carretera.contarvehiculosEnMovimientos();
+		
 	
+		
+		assertEquals(1,result);
 	}
 
 	@Test
 	public void testContarAutosTranscurridos() {
 		setupStage4();
+		Carro carro11 = carretera.agregarAutomovil("487", 56, 400);
 		
+		int result = carretera.contarAutosTranscurridos();
+		
+		assertEquals(1,result);
 	}
 
 	@Test
 	public void testAgrContarMovimiento() {
 		
 		setupStage5();
+		Carro carro11 = carretera.agregarAutomovil("487", 10, 4);
+		int result = carretera.contarMovimientos(carro11);
+		System.out.println(result);
+		assertEquals(20,result);
+		
 	}
 }
 
